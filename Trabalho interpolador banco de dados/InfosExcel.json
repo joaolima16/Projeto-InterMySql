@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "carros": "Idea",
+        "potencia": 81,
+        "ano": 2012
+    },
+    {
+        "id": 2,
+        "carros": "Fiorino",
+        "potencia": 65,
+        "ano": 2005
+    },
+    {
+        "id": 3,
+        "carros": "Palio",
+        "potencia": 65,
+        "ano": 2008
+    },
+    {
+        "id": 4,
+        "carros": "Golf",
+        "potencia": 204,
+        "ano": 2020
+    },
+    {
+        "id": 5,
+        "carros": "Jetta",
+        "potencia": 202,
+        "ano": 2014
+    }
+]
