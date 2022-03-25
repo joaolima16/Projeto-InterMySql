@@ -22,7 +22,3 @@ em json e enviar para o banco de dados
 
 
 
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
