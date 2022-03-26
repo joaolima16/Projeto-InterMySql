@@ -20,20 +20,25 @@ for col in range(0,qtdCol):
         informacoesCelula.append(wb[valorCol].value)
     dados[wb[celula].value] = informacoesCelula
 
+
 dadosTratados = []
 def formataJson():
-    for i in range(len(dados) + 1):
-        idTemporario = dados['id'][i]
-        carroTemporario = dados['carros'][i]
-        potenciaTemporario = dados['potencia'][i]
-        anoTemporario = dados['ano'][i]
-        objTemporario = {
-            "id":idTemporario,
-            "carros":carroTemporario,
-            "potencia":potenciaTemporario,
-            "ano":anoTemporario
-        }
-        dadosTratados.append(objTemporario)
+    i = 0
+    for linhas in range(1,qtdLinhas):
+        arrayInfosTemp = []
+        arrayIndex = []
+        objetoLinha = {}
+        for colunas in range(0,qtdCol):
+            letra = 65 + colunas
+            letra = chr(letra)
+            celulaCampo = f"{letra}1"
+            arrayIndex.append(wb[celulaCampo].value)
+            arrayInfosTemp.append(dados[wb[celulaCampo].value][i])
+        for infos in range(0,len(arrayIndex)):
+            objetoLinha[arrayIndex[infos]] = arrayInfosTemp[infos]
+        dadosTratados.append(objetoLinha)
+        i = i + 1
+        
 formataJson()
 arquivo = open("InfosExcel.json",'w')
 json.dump(dadosTratados,arquivo,indent=4)
